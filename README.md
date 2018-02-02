@@ -9,9 +9,10 @@ Steps to setup the project (We are assuming that, you have already installed nod
 2. Install bower and npm dependencies by running below commands
 
 npm install
-
 bower install
 
 3. Install gulp globally
+
 npm install --global gulp-cli
+
 4. Once it's done, run 'gulp serve' command, and open 'http://localhost:3000/' in browser.
