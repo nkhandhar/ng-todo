@@ -1,8 +1,72 @@
-<div class="main-container">
-  <fountain-header></fountain-header>
-  <main class="main">
-    <fountain-title></fountain-title>
-    <fountain-techs></fountain-techs>
-  </main>
-  <fountain-footer></fountain-footer>
-</div>
+<section class="section">
+	<div class="container">
+		<div class="columns">
+			<div class="column m-r-10 m-b-rem">
+			</div>
+			<div class="column box m-l-10 m-b-rem">
+				<div class="is-pulled-left">
+					<div class="field">
+						<label class="checkbox">
+							<input type="checkbox" ng-model="vm.allSelected" ng-click="vm.onSelectAllTodos();"> Select all
+						</label>
+					</div>
+				</div>
+				<div class="is-pulled-right">
+					<button class="button is-danger" ng-click="vm.onDelete()">Delete</button>
+				</div>
+			</div>
+		</div>
+		<div class="columns">
+			<div class="column box m-r-10 todo-form">
+				<div class="field">
+					<label class="label">Title</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="title" ng-model="vm.todo.title">
+					</div>
+				</div>
+
+				<div class="field">
+					<label class="label">Description</label>
+					<div class="control">
+						<textarea class="textarea" placeholder="description" ng-model="vm.todo.description"></textarea>
+					</div>
+				</div>
+
+				<div class="field is-grouped">
+					<div class="control">
+						<button class="button is-link" ng-disabled="vm.todo.title === '' || vm.todo.description === ''" ng-click="vm.onCreate()">Add Todo</button>
+					</div>
+					<div class="control">
+						<button class="button is-light" ng-click="vm.onReset()">Reset</button>
+					</div>
+				</div>
+			</div>
+			<div class="column box m-l-10">
+				<div ng-repeat="todo in vm.todos track by $index">
+					<article class="media">
+						<div class="media-left">
+							<label class="checkbox">
+								<input type="checkbox" ng-model="todo.isSelected">
+							</label>
+						</div>
+						<div class="media-content">
+							<div class="content">
+								<p>
+									<strong>{{todo.title}}</strong>
+									<br> {{todo.description}}
+								</p>
+							</div>
+						</div>
+						<div class="media-right">
+							<button class="delete" ng-click="vm.onDelete($index)"></button>
+						</div>
+					</article>
+					<hr ng-if="!$last">
+				</div>
+				<div ng-if="!vm.todos.length">
+					<h2>No todos found.</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
