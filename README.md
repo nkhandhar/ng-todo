@@ -2,7 +2,8 @@
 Todo app built with angular.js
 
 Steps to setup the project (We are assuming that, you have already installed node.js)
-(Note: if you are seting up project in linux based os / mac os, you might face some permission issue. In such case just add 'sudo' as prefix to npm install.
+
+(Note: if you are seting up project in linux based os / mac os, you may face some permission issue. In such case just add 'sudo' as prefix to npm install.
 
 1. Clone the repo and go inside the root directory
 2. Install bower and npm dependencies by running below commands
